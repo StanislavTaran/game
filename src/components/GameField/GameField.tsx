@@ -1,6 +1,6 @@
-import React, {useRef, MouseEvent, Ref} from 'react';
+import React, { MouseEvent} from 'react';
 import styled, { ThemedStyledProps } from 'styled-components';
-import getRandomColor from "../../helpers/getRandomColor";
+import {SQUARES_QTY} from "../../constants/gameParams";
 
 interface StyledSquareItemProps extends ThemedStyledProps<any, any> {
   isActive: boolean;
@@ -12,7 +12,7 @@ const StyledSquareItem = styled.li`
   margin: 0;
   padding: 0;
   border: 2px solid #fff;
-  background-color: ${(props: StyledSquareItemProps) => (props.isActive ? getRandomColor() : '#a0a0a0')};
+  background-color: '#a0a0a0';
 `;
 
 const StyledSquaresList = styled.ul`
@@ -25,16 +25,16 @@ const StyledSquaresList = styled.ul`
   list-style: none;
 `;
 
+
+const arraySquares = Array.from(Array(SQUARES_QTY).keys());
+
 interface GameFieldProps {
   onClickOnSquare: (e: MouseEvent) => void;
-  ref: Ref<HTMLUListElement>
 }
 
-const arraySquares = Array.from(Array(81).keys());
+type Ref = HTMLUListElement
 
-const GameField = ({ onClickOnSquare, ref }: GameFieldProps) => {
-
-
+const GameField = React.forwardRef<Ref, GameFieldProps>(({ onClickOnSquare }, ref) => {
   return (
     <StyledSquaresList ref={ref} onClick={onClickOnSquare}>
       {arraySquares.map(item => (
@@ -42,6 +42,6 @@ const GameField = ({ onClickOnSquare, ref }: GameFieldProps) => {
       ))}
     </StyledSquaresList>
   );
-};
+});
 
 export default GameField;
