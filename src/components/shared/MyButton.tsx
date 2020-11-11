@@ -24,8 +24,8 @@ interface MyButtonProps {
   onClick?: ()=> void
 }
 
-const MyButton = ({ text }: MyButtonProps) => {
-  return <StyledButton>{text}</StyledButton>;
+const MyButton = ({ text, onClick }: MyButtonProps) => {
+  return <StyledButton onClick={onClick}>{text}</StyledButton>;
 };
 
 export default MyButton;

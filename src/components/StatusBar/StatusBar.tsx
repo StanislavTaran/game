@@ -14,18 +14,29 @@ const CountBoard = styled.div`
   align-items: center;
 `;
 
-const StatusBar = () => {
+const StyledSpan = styled.span`
+  color: ${props => (props.color ? props.color : '#000')};
+`;
+
+interface StatusBarProps{
+    timeLeft: number;
+    score: number;
+    onStartGame: ()=>void
+    onStartNewGame: ()=>void
+}
+
+const StatusBar = ({timeLeft, score, onStartGame, onStartNewGame}:StatusBarProps) => {
   return (
     <StatusBarWrapper>
-      <MyButton text="Start" />
-      <MyButton text="New Game" />
+      <MyButton text="Start" onClick={onStartGame} />
+      <MyButton text="New Game" onClick={onStartNewGame} />
       <CountBoard>
-        <span>Points</span>
-        <span>1000</span>
+        <StyledSpan>Points</StyledSpan>
+        <StyledSpan color="#318010">{score}</StyledSpan>
       </CountBoard>
       <CountBoard>
-        <span>Time left</span>
-        <span>00:00</span>
+        <StyledSpan>Time left</StyledSpan>
+        <StyledSpan color="#ff0000">{timeLeft}</StyledSpan>
       </CountBoard>
     </StatusBarWrapper>
   );
