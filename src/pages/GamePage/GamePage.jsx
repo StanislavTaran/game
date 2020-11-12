@@ -3,13 +3,24 @@ import StatusBar from '../../components/StatusBar/StatusBar';
 import GameWrapper from '../../components/GameWrapper/GameWrapper';
 import GameField from '../../components/GameField/GameField';
 import getRandomNumber from '../../helpers/getRandomNumber';
-import { SQUARES_QTY, INITIAL_TIMER_VALUE, SQUARES_QTY_ON_FIELD, GAME_STATUS } from '../../constants/gameParams';
+import {
+  SQUARES_QTY,
+  INITIAL_TIMER_VALUE,
+  SQUARES_QTY_ON_FIELD,
+  GAME_STATUS,
+  defaultScoreList,
+} from '../../constants/gameParams';
+import Portal from '../../components/Portal/Portal';
+import ResultForm from '../../components/ResultForm/ResultForm';
+import usePersistedState from '../../hooks/usePesistState';
 
 const GamePage = () => {
   let [gameStatus, setGameStatus] = useState(GAME_STATUS.PENDING);
   let [timerValue, setTimerValue] = useState(INITIAL_TIMER_VALUE);
   let [scoreValue, setScoreValue] = useState(0);
-  const [squaresIdList, setSquaresIdList] = useState(getRandomNumber(SQUARES_QTY, 5) );
+  const [squaresIdList, setSquaresIdList] = useState(getRandomNumber(SQUARES_QTY, 5));
+
+  const [scoreList, setScoreList] = usePersistedState('score_list', defaultScoreList);
 
   const listSquaresRef = React.createRef();
 
@@ -24,22 +35,21 @@ const GamePage = () => {
     return elem.classList.toggle('square-green', set);
   };
 
-  const setSquaresListAsActive = (squaresIdList) => {
+  const setSquaresListAsActive = squaresIdList => {
     for (let item of squaresIdList) {
-      const elem = (listSquaresRef).current.childNodes[item.toString()];
+      const elem = listSquaresRef.current.childNodes[item.toString()];
       if (!elem.classList.contains('square-green')) {
         setSquareAsActive(elem);
       } else continue;
     }
   };
 
-  const resetSquaresListAsActive =()=>{
+  const resetSquaresListAsActive = () => {
     for (let item of squaresIdList) {
-      const elem = (listSquaresRef).current.childNodes[item.toString()];
-        setSquareAsActive(elem,false);
+      const elem = listSquaresRef.current.childNodes[item.toString()];
+      setSquareAsActive(elem, false);
     }
-  }
-
+  };
 
   const generateSquaresIdList = useCallback(() => {
     const generatedSquareId = getRandomNumber(SQUARES_QTY, 1);
@@ -62,24 +72,30 @@ const GamePage = () => {
     setGameStatus(GAME_STATUS.PENDING);
     setScoreValue(0);
     setTimerValue(INITIAL_TIMER_VALUE);
-    resetSquaresListAsActive()
-
+    resetSquaresListAsActive();
   };
 
   const handleSetTimerValue = useCallback(() => {
     setTimerValue(timerValue => timerValue - 1);
   }, []);
 
-  const handleClickOnSquare = (e) => {
-    const elemId = (e.target).id;
+  const handleClickOnSquare = e => {
+    const elemId = e.target.id;
     const isSquareActive = squaresIdList.indexOf(Number(elemId)) > -1;
     if (gameStatus === GAME_STATUS.GAME_ON && isSquareActive) {
-      setSquareAsActive((listSquaresRef).current.childNodes[elemId.toString()], false);
+      setSquareAsActive(listSquaresRef.current.childNodes[elemId.toString()], false);
       setScoreValue(scoreValue => scoreValue + 1);
       const newRandomNumber = getUniqNumber();
       setSquaresIdList(state => [...state.filter(item => item !== Number(elemId)), newRandomNumber]);
-      setSquareAsActive((listSquaresRef).current.childNodes[(newRandomNumber).toString()]);
+      setSquareAsActive(listSquaresRef.current.childNodes[newRandomNumber.toString()]);
     }
+  };
+
+  const handleSubmitResultForm = e => {
+    e.preventDefault()
+    const data = { name: e.target[0].value, score: scoreValue };
+     setScoreList(state => [...state, data]);
+     setGameStatus(GAME_STATUS.PENDING);
   };
 
   useEffect(() => {
@@ -104,9 +120,15 @@ const GamePage = () => {
     }
   }, [squaresIdList]);
 
+  // RENDER
+
   return (
     <GameWrapper>
-
+      {gameStatus === GAME_STATUS.GAME_OVER && (
+        <Portal>
+          <ResultForm onSubmitForm={handleSubmitResultForm} />
+        </Portal>
+      )}
       <StatusBar
         timeLeft={timerValue}
         score={scoreValue}

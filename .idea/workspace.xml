@@ -2,23 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2957a6fb-96cf-48a5-a389-2f0a4941b219" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/troll.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/constants/gameParams.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helpers/getRandomNumber.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/GamePage/GamePage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Portal/Portal.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ResultForm/ResultForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/shared/MyInput.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/usePesistState.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GameField/GameField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GameField/GameField.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GameWrapper/GameWrapper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GameWrapper/GameWrapper.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/StatusBar/StatusBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StatusBar/StatusBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/shared/MyButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/MyButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/gameParams.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helpers/getRandomColor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/getRandomColor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helpers/getRandomNumber.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/GamePage/GamePage.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GameField/GameField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GameField/GameField.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/MyButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/MyButton.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/gameParams.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/gameParams.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/GamePage/GamePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/GamePage/GamePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app-env.d.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +25,7 @@
         <option value="CSS File" />
         <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -75,7 +70,7 @@
       <workItem from="1605030396914" duration="5491000" />
       <workItem from="1605072943540" duration="32047000" />
       <workItem from="1605159180414" duration="465000" />
-      <workItem from="1605159902477" duration="23621000" />
+      <workItem from="1605159902477" duration="30138000" />
     </task>
     <servers />
   </component>

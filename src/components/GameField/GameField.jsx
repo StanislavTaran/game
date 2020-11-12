@@ -1,5 +1,5 @@
-import React, { MouseEvent} from 'react';
-import styled, { ThemedStyledProps } from 'styled-components';
+import React from 'react';
+import styled from 'styled-components';
 import {SQUARES_QTY} from "../../constants/gameParams";
 
 const StyledSquareItem = styled.li`

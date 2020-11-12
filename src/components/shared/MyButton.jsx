@@ -8,20 +8,22 @@ const StyledButton = styled.button`
   border-color: tomato;
   border-radius: 6px;
   width: 120px;
-  transition: .3s all;
+  transition: 0.3s all;
   font-weight: 700;
-  
-  &:hover{
-  cursor: pointer;
-  background-color: #00bcd4;
-  color: #fff;
-  
+
+  &:hover {
+    cursor: pointer;
+    background-color: #00bcd4;
+    color: #fff;
   }
 `;
 
-
-const MyButton = ({ text, onClick }) => {
-  return <StyledButton onClick={onClick}>{text}</StyledButton>;
+const MyButton = ({ text, onClick, ...props }) => {
+  return (
+    <StyledButton onClick={onClick} {...props}>
+      {text}
+    </StyledButton>
+  );
 };
 
 export default MyButton;
