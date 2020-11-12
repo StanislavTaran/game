@@ -2,10 +2,6 @@ import React, { MouseEvent} from 'react';
 import styled, { ThemedStyledProps } from 'styled-components';
 import {SQUARES_QTY} from "../../constants/gameParams";
 
-interface StyledSquareItemProps extends ThemedStyledProps<any, any> {
-  isActive: boolean;
-}
-
 const StyledSquareItem = styled.li`
   width: 68px;
   height: 68px;
@@ -28,13 +24,8 @@ const StyledSquaresList = styled.ul`
 
 const arraySquares = Array.from(Array(SQUARES_QTY).keys());
 
-interface GameFieldProps {
-  onClickOnSquare: (e: MouseEvent) => void;
-}
 
-type Ref = HTMLUListElement
-
-const GameField = React.forwardRef<Ref, GameFieldProps>(({ onClickOnSquare }, ref) => {
+const GameField = React.forwardRef(({ onClickOnSquare }, ref) => {
   return (
     <StyledSquaresList ref={ref} onClick={onClickOnSquare}>
       {arraySquares.map(item => (

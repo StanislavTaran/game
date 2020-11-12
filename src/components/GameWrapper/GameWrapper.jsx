@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React  from 'react';
 import styled from 'styled-components';
 
 const StyledGameWrapper = styled.div`
@@ -9,11 +9,7 @@ const StyledGameWrapper = styled.div`
   border-radius: 30px 30px 20px 20px;
 `;
 
-interface GameWrapperProps {
-  children: [ReactElement, ReactElement];
-}
-
-const GameWrapper = ({ children }: GameWrapperProps) => {
+const GameWrapper = ({ children }) => {
   return <StyledGameWrapper>{children}</StyledGameWrapper>;
 };
 

@@ -19,12 +19,8 @@ const StyledButton = styled.button`
   }
 `;
 
-interface MyButtonProps {
-  text: string;
-  onClick?: ()=> void
-}
 
-const MyButton = ({ text, onClick }: MyButtonProps) => {
+const MyButton = ({ text, onClick }) => {
   return <StyledButton onClick={onClick}>{text}</StyledButton>;
 };
 

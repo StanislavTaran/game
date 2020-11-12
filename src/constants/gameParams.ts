@@ -1,1 +1,0 @@
-export const SQUARES_QTY = 81

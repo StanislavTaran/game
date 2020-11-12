@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import MyButton from '../shared/MyButton';
+import imageTroll from '../../assets/troll.svg'
 
 const StatusBarWrapper = styled.div`
   display: flex;
@@ -18,16 +19,16 @@ const StyledSpan = styled.span`
   color: ${props => (props.color ? props.color : '#000')};
 `;
 
-interface StatusBarProps{
-    timeLeft: number;
-    score: number;
-    onStartGame: ()=>void
-    onStartNewGame: ()=>void
-}
+const StyledImage = styled.img`
+display: block;
+width: 80px;
+height: auto;
+`
 
-const StatusBar = ({timeLeft, score, onStartGame, onStartNewGame}:StatusBarProps) => {
+const StatusBar = ({timeLeft, score, onStartGame, onStartNewGame}) => {
   return (
     <StatusBarWrapper>
+        <StyledImage src={imageTroll} alt='troll'/>
       <MyButton text="Start" onClick={onStartGame} />
       <MyButton text="New Game" onClick={onStartNewGame} />
       <CountBoard>

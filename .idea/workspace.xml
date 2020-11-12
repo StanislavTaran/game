@@ -2,11 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2957a6fb-96cf-48a5-a389-2f0a4941b219" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/constants/gameParams.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/troll.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/constants/gameParams.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helpers/getRandomNumber.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/GamePage/GamePage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GameField/GameField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GameField/GameField.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GameField/GameField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GameField/GameField.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GameWrapper/GameWrapper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GameWrapper/GameWrapper.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/StatusBar/StatusBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StatusBar/StatusBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/MyButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/MyButton.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/gameParams.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/getRandomColor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/getRandomColor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/getRandomNumber.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/GamePage/GamePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/GamePage/GamePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/GamePage/GamePage.tsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +48,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="D:\dev\projects\game\node_modules\prettier" />
@@ -44,6 +56,9 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\dev\projects\game\src\assets" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\dev\projects\game\src" />
       <recent name="D:\dev\projects\game\src\components\App" />
@@ -58,7 +73,9 @@
       <option name="presentableId" value="Default" />
       <updated>1605030395878</updated>
       <workItem from="1605030396914" duration="5491000" />
-      <workItem from="1605072943540" duration="30998000" />
+      <workItem from="1605072943540" duration="32047000" />
+      <workItem from="1605159180414" duration="465000" />
+      <workItem from="1605159902477" duration="23621000" />
     </task>
     <servers />
   </component>
@@ -74,5 +91,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605030971655" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1605120697113">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1605120697113" />
   </component>
 </project>
