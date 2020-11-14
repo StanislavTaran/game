@@ -11,7 +11,7 @@ const StyledFormContainer = styled.div`
   background-color: #deb887;
 `;
 
-const StyledTitle = styled.h2`
+export const StyledTitle = styled.h2`
   margin: 20px auto;
   margin-bottom: 30px;
   text-align: center;
@@ -27,13 +27,19 @@ const StyledForm = styled.form`
   align-items: center;
 `;
 
-const ResultForm = ({ onSubmitForm }) => {
+export const StyledParagraph = styled.p`
+  text-align: center;
+  text-transform: capitalize;
+`;
+
+const ResultForm = ({ onSubmitForm, score }) => {
   return (
     <StyledFormContainer>
       <StyledTitle>game over</StyledTitle>
+      <StyledParagraph>{`Score: ${score}`}</StyledParagraph>
       <StyledForm onSubmit={onSubmitForm}>
         <label>Name </label>
-        <MyInput name="name" placeholder="enter your name" />
+        <MyInput name="name" placeholder="Enter your name" maxLength='10'/>
 
         <MyButton text="SAVE" type='submit' />
       </StyledForm>
