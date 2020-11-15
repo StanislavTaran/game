@@ -2,23 +2,36 @@ import React, { useState, useEffect, useCallback } from 'react';
 import StatusBar from '../../components/StatusBar/StatusBar';
 import GameWrapper from '../../components/GameWrapper/GameWrapper';
 import GameField from '../../components/GameField/GameField';
+import ScoreTable from '../../components/ScoreTable/ScoreTable';
 import getRandomNumber from '../../helpers/getRandomNumber';
 import {
   SQUARES_QTY,
   INITIAL_TIMER_VALUE,
   SQUARES_QTY_ON_FIELD,
   GAME_STATUS,
-  defaultScoreList,
+  defaultScoreList, activeClasses,
 } from '../../constants/gameParams';
 import Portal from '../../components/Portal/Portal';
 import ResultForm from '../../components/ResultForm/ResultForm';
 import usePersistedState from '../../hooks/usePesistState';
+import styled from 'styled-components';
+
+const StyledPageWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+`;
+
+const activeClassesList = Object.values(activeClasses)
 
 const GamePage = () => {
   let [gameStatus, setGameStatus] = useState(GAME_STATUS.PENDING);
   let [timerValue, setTimerValue] = useState(INITIAL_TIMER_VALUE);
   let [scoreValue, setScoreValue] = useState(0);
-  const [squaresIdList, setSquaresIdList] = useState(getRandomNumber(SQUARES_QTY, 5));
+  const [squaresIdList, setSquaresIdList] = useState(getRandomNumber(SQUARES_QTY, SQUARES_QTY_ON_FIELD));
 
   const [scoreList, setScoreList] = usePersistedState('score_list', defaultScoreList);
 
@@ -92,10 +105,11 @@ const GamePage = () => {
   };
 
   const handleSubmitResultForm = e => {
-    e.preventDefault()
-    const data = { name: e.target[0].value, score: scoreValue };
-     setScoreList(state => [...state, data]);
-     setGameStatus(GAME_STATUS.PENDING);
+    e.preventDefault();
+    const nameTargetValue = e.target[0].value;
+    const data = { name: nameTargetValue.length ? nameTargetValue : 'Unknown', score: scoreValue };
+    setScoreList(state => [...state, data]);
+    setGameStatus(GAME_STATUS.PENDING);
   };
 
   useEffect(() => {
@@ -120,22 +134,24 @@ const GamePage = () => {
     }
   }, [squaresIdList]);
 
-
   return (
-    <GameWrapper>
-      {gameStatus === GAME_STATUS.GAME_OVER && (
-        <Portal>
-          <ResultForm onSubmitForm={handleSubmitResultForm} />
-        </Portal>
-      )}
-      <StatusBar
-        timeLeft={timerValue}
-        score={scoreValue}
-        onStartGame={handleStartGame}
-        onStartNewGame={handleStartNewGame}
-      />
-      <GameField onClickOnSquare={handleClickOnSquare} ref={listSquaresRef} />
-    </GameWrapper>
+    <StyledPageWrapper>
+      <GameWrapper>
+        {gameStatus === GAME_STATUS.GAME_OVER && (
+          <Portal>
+            <ResultForm onSubmitForm={handleSubmitResultForm} score={scoreValue} />
+          </Portal>
+        )}
+        <StatusBar
+          timeLeft={timerValue}
+          score={scoreValue}
+          onStartGame={handleStartGame}
+          onStartNewGame={handleStartNewGame}
+        />
+        <GameField onClickOnSquare={handleClickOnSquare} ref={listSquaresRef} />
+      </GameWrapper>
+      {scoreList ? <ScoreTable participantsList={scoreList} /> : null}
+    </StyledPageWrapper>
   );
 };
 

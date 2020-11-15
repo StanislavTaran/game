@@ -2,8 +2,8 @@ import React  from 'react';
 import styled from 'styled-components';
 
 const StyledGameWrapper = styled.div`
-  max-width: 700px;
-  margin: 0 auto;
+  width: 700px;
+  height: 586px;
   padding: 5px;
   border: 2px solid tomato;
   border-radius: 30px 30px 20px 20px;

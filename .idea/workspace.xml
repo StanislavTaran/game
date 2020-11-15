@@ -1,18 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="2957a6fb-96cf-48a5-a389-2f0a4941b219" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Portal/Portal.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ResultForm/ResultForm.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/shared/MyInput.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/usePesistState.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ScoreTable/ScoreTable.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GameField/GameField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GameField/GameField.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/shared/MyButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/MyButton.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GameWrapper/GameWrapper.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GameWrapper/GameWrapper.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ResultForm/ResultForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ResultForm/ResultForm.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/constants/gameParams.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/gameParams.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/GamePage/GamePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/GamePage/GamePage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app-env.d.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +91,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="707" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605031319460">

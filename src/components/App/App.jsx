@@ -4,7 +4,8 @@ import styled from 'styled-components';
 import Header from '../Header/Header';
 
 const StyledAppWrapper = styled.div`
-  padding: 40px 15px 0 15px;
+  margin: 0;
+  padding: 10px 0 0 0;
   background-color: #e2dfdf;
   width: 100%;
   height: 100vh;
@@ -13,9 +14,8 @@ const StyledAppWrapper = styled.div`
 function App() {
   return (
     <div>
-        <Header />
+      <Header />
       <StyledAppWrapper>
-
         <GamePage />
       </StyledAppWrapper>
     </div>
