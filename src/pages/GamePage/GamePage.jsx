@@ -120,7 +120,6 @@ const GamePage = () => {
     }
   }, [squaresIdList]);
 
-  // RENDER
 
   return (
     <GameWrapper>
