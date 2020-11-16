@@ -9,7 +9,8 @@ import {
   INITIAL_TIMER_VALUE,
   SQUARES_QTY_ON_FIELD,
   GAME_STATUS,
-  defaultScoreList, activeClasses,
+  defaultScoreList,
+  activeClasses,
 } from '../../constants/gameParams';
 import Portal from '../../components/Portal/Portal';
 import ResultForm from '../../components/ResultForm/ResultForm';
@@ -25,7 +26,7 @@ const StyledPageWrapper = styled.div`
   padding: 0;
 `;
 
-const activeClassesList = Object.values(activeClasses)
+const activeClassesList = Object.values(activeClasses);
 
 const GamePage = () => {
   let [gameStatus, setGameStatus] = useState(GAME_STATUS.PENDING);
@@ -37,30 +38,62 @@ const GamePage = () => {
 
   const listSquaresRef = React.createRef();
 
-  const getUniqNumber = () => {
-    const uniqNumber = getRandomNumber(SQUARES_QTY, 1);
+  const getUniqNumber = (additionalList = []) => {
+    let uniqNumber = getRandomNumber(SQUARES_QTY, 1);
+    if (additionalList.length) {
+      if (additionalList.indexOf(uniqNumber) > -1) {
+        uniqNumber = getUniqNumber();
+      }
+    }
     if (squaresIdList.indexOf(uniqNumber) === -1) {
       return uniqNumber;
     } else return getUniqNumber();
   };
 
-  const setSquareAsActive = (elem, set = true) => {
-    return elem.classList.toggle('square-green', set);
-  };
+  const getUniqNumbersList = (withoutZero = false) => {
+    const randomQuantity = getRandomNumber(3);
+    if (randomQuantity === 0 && withoutZero) {
+      return getUniqNumbersList();
+    }
+    if (randomQuantity === 0) {
+      return [];
+    } else {
+      const arrOfUniqNumbers = [];
+      for (let i = 0; i < randomQuantity; i++) {
+        let randomNumber = getUniqNumber(arrOfUniqNumbers);
 
-  const setSquaresListAsActive = squaresIdList => {
-    for (let item of squaresIdList) {
-      const elem = listSquaresRef.current.childNodes[item.toString()];
-      if (!elem.classList.contains('square-green')) {
-        setSquareAsActive(elem);
-      } else continue;
+        arrOfUniqNumbers.push(randomNumber);
+      }
+      return arrOfUniqNumbers;
     }
   };
 
-  const resetSquaresListAsActive = () => {
+  const setActiveClassForElem = elem => {
+    const randomIdx = getRandomNumber(activeClassesList.length);
+    return elem.classList.add(activeClassesList[randomIdx]);
+  };
+
+  const resetActiveClassForElem = elem => {
+    if (elem.classList.contains(activeClasses.GREEN)) {
+      elem.classList.remove(activeClasses.GREEN);
+    } else if (elem.classList.contains(activeClasses.BLUE)) {
+      elem.classList.remove(activeClasses.BLUE);
+    } else if (elem.classList.contains(activeClasses.RED)) {
+      elem.classList.remove(activeClasses.RED);
+    } else return;
+  };
+
+  const setActiveClassForElements = idList => {
+    for (let item of idList) {
+      const elem = listSquaresRef.current.childNodes[item.toString()];
+      setActiveClassForElem(elem);
+    }
+  };
+
+  const resetActiveClassForElements = () => {
     for (let item of squaresIdList) {
       const elem = listSquaresRef.current.childNodes[item.toString()];
-      setSquareAsActive(elem, false);
+      resetActiveClassForElem(elem);
     }
   };
 
@@ -73,10 +106,17 @@ const GamePage = () => {
   }, [squaresIdList]);
 
   const handleStartGame = () => {
-    if (timerValue === INITIAL_TIMER_VALUE) {
+    if (timerValue === INITIAL_TIMER_VALUE || gameStatus === GAME_STATUS.PAUSE) {
+      const prevStatusGame = gameStatus
       setGameStatus(GAME_STATUS.GAME_ON);
-      handleSetTimerValue();
-      setSquaresListAsActive(squaresIdList);
+      setTimeout(() => {
+        handleSetTimerValue();
+      }, 1000);
+      if(prevStatusGame === GAME_STATUS.PENDING) {
+        setActiveClassForElements(squaresIdList);
+      };
+    } else {
+      setGameStatus(GAME_STATUS.PAUSE);
     }
   };
 
@@ -85,7 +125,8 @@ const GamePage = () => {
     setGameStatus(GAME_STATUS.PENDING);
     setScoreValue(0);
     setTimerValue(INITIAL_TIMER_VALUE);
-    resetSquaresListAsActive();
+    resetActiveClassForElements(squaresIdList);
+    setSquaresIdList(getRandomNumber(SQUARES_QTY, SQUARES_QTY_ON_FIELD));
   };
 
   const handleSetTimerValue = useCallback(() => {
@@ -95,12 +136,21 @@ const GamePage = () => {
   const handleClickOnSquare = e => {
     const elemId = e.target.id;
     const isSquareActive = squaresIdList.indexOf(Number(elemId)) > -1;
+
     if (gameStatus === GAME_STATUS.GAME_ON && isSquareActive) {
-      setSquareAsActive(listSquaresRef.current.childNodes[elemId.toString()], false);
       setScoreValue(scoreValue => scoreValue + 1);
-      const newRandomNumber = getUniqNumber();
-      setSquaresIdList(state => [...state.filter(item => item !== Number(elemId)), newRandomNumber]);
-      setSquareAsActive(listSquaresRef.current.childNodes[newRandomNumber.toString()]);
+
+      const newRandomNumbers = getUniqNumbersList();
+      resetActiveClassForElem(e.target);
+      console.log(newRandomNumbers);
+
+      setSquaresIdList(state => [...state.filter(item => item !== Number(elemId))]);
+
+      if (newRandomNumbers.length) {
+        setSquaresIdList(state => [...state, ...newRandomNumbers]);
+
+        setActiveClassForElements(newRandomNumbers);
+      }
     }
   };
 
@@ -129,8 +179,10 @@ const GamePage = () => {
   }, [timerValue]);
 
   useEffect(() => {
-    if (squaresIdList.length < SQUARES_QTY_ON_FIELD) {
-      setSquaresListAsActive(squaresIdList);
+    if (squaresIdList.length < 1) {
+      const uniqNumbers = getUniqNumbersList(true);
+      setSquaresIdList(() => [...uniqNumbers]);
+      setActiveClassForElements(uniqNumbers);
     }
   }, [squaresIdList]);
 
@@ -143,6 +195,7 @@ const GamePage = () => {
           </Portal>
         )}
         <StatusBar
+          gameStatus={gameStatus}
           timeLeft={timerValue}
           score={scoreValue}
           onStartGame={handleStartGame}

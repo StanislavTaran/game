@@ -6,21 +6,13 @@ export const GAME_STATUS = {
   PENDING: 'pending',
   GAME_OVER: 'over',
   GAME_ON: 'on',
+  PAUSE: 'pause'
 };
 
 export const defaultScoreList = [
   { name: 'Unknown', score: 120 },
   { name: 'John Doe', score: 113 },
-  { name: 'John De', score: 111 },
-  { name: 'John e', score: 14 },
-  { name: 'John', score: 111 },
-  { name: 'John Doe', score: 151 },
-  { name: 'John Do', score: 117 },
-  { name: 'John De', score: 111 },
-  { name: 'Unknown', score: 121 },
-  { name: 'Unknown', score: 122 },
-  { name: 'Unknown', score: 125 },
-  { name: 'Unknown', score: 126 },
+  { name: 'Black_Fox', score: 111 },
 ];
 
 

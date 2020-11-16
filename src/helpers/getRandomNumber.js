@@ -5,6 +5,7 @@ const getRandomNumber = (max, quantity = 1) => {
     const arrOfNumbers = [];
     for (let i = 0; i < quantity; i++) {
       const number = getRandomNumber(max);
+      if(arrOfNumbers.indexOf(number) > -1) continue;
       arrOfNumbers.push(number);
     }
     return arrOfNumbers;

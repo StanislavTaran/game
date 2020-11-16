@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import MyButton from '../shared/MyButton';
 import imageTroll from '../../assets/troll.svg'
+import {GAME_STATUS} from "../../constants/gameParams";
 
 const StatusBarWrapper = styled.div`
   display: flex;
@@ -25,11 +26,12 @@ width: 80px;
 height: auto;
 `
 
-const StatusBar = ({timeLeft, score, onStartGame, onStartNewGame}) => {
+const StatusBar = ({timeLeft, score, onStartGame, onStartNewGame, gameStatus}) => {
+    const isWaiting = gameStatus === GAME_STATUS.PAUSE || gameStatus === GAME_STATUS.PENDING
   return (
     <StatusBarWrapper>
         <StyledImage src={imageTroll} alt='troll'/>
-      <MyButton text="Start" onClick={onStartGame} />
+      <MyButton text={isWaiting ? 'Start' : 'Pause'} onClick={onStartGame} />
       <MyButton text="New Game" onClick={onStartNewGame} />
       <CountBoard>
         <StyledSpan>Points</StyledSpan>

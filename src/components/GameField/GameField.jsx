@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {SQUARES_QTY} from "../../constants/gameParams";
+import { SQUARES_QTY } from '../../constants/gameParams';
 
 const StyledSquareItem = styled.li`
   width: 68px;
@@ -8,7 +8,10 @@ const StyledSquareItem = styled.li`
   margin: 0;
   padding: 0;
   border: 2px solid #fff;
+  border-radius: 8px;
   background-color: '#a0a0a0';
+  transition-property: background-color;
+  transition-duration: .4s;
 `;
 
 const StyledSquaresList = styled.ul`
@@ -21,9 +24,7 @@ const StyledSquaresList = styled.ul`
   list-style: none;
 `;
 
-
 const arraySquares = Array.from(Array(SQUARES_QTY).keys());
-
 
 const GameField = React.forwardRef(({ onClickOnSquare }, ref) => {
   return (
