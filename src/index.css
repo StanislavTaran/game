@@ -6,18 +6,25 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-.square-green{
+.square-green {
   background-color: #178522;
 }
 
-.square-blue{
+.square-blue {
   background-color: #178585;
 }
 
-.square-red{
+.square-red {
   background-color: #851736;
+}
+
+.square-blue:hover,
+.square-green:hover,
+.square-red:hover {
+  cursor: pointer;
+  transform: scale(0.95);
+  transition: all 0.3s ease-in-out;
 }

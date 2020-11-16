@@ -11,7 +11,7 @@ const StyledSquareItem = styled.li`
   border-radius: 8px;
   background-color: '#a0a0a0';
   transition-property: background-color;
-  transition-duration: .4s;
+  transition-duration: 0.3s;
 `;
 
 const StyledSquaresList = styled.ul`
