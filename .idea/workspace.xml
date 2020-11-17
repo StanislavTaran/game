@@ -20,12 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2957a6fb-96cf-48a5-a389-2f0a4941b219" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/GameField/GameField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GameField/GameField.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ScoreTable/ScoreTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ScoreTable/ScoreTable.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GameWrapper/GameWrapper.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GameWrapper/GameWrapper.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Portal/Portal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Portal/Portal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ResultForm/ResultForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ResultForm/ResultForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/StatusBar/StatusBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StatusBar/StatusBar.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/constants/gameParams.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/gameParams.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/classesHelpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/classesHelpers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/GamePage/GamePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/GamePage/GamePage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +94,7 @@
       <workItem from="1605159180414" duration="465000" />
       <workItem from="1605159902477" duration="30485000" />
       <workItem from="1605507414000" duration="24311000" />
-      <workItem from="1605630826452" duration="442000" />
+      <workItem from="1605630826452" duration="5452000" />
     </task>
     <servers />
   </component>

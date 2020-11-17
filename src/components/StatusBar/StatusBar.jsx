@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import MyButton from '../shared/MyButton';
 import imageTroll from '../../assets/troll.svg';
 import { GAME_STATUS } from '../../constants/gameParams';
-import getFormattedTimerValue from "../../helpers/getFormatedTimerValue";
+import getFormattedTimerValue from '../../helpers/getFormatedTimerValue';
 
 const StatusBarWrapper = styled.div`
   display: flex;
@@ -15,6 +15,9 @@ const CountBoard = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 2px solid #eee;
+  border-radius: 8px;
+  padding: 4px 2px;
 `;
 
 const StyledSpan = styled.span`
@@ -29,9 +32,7 @@ const StyledImage = styled.img`
 
 const StatusBar = ({ timeLeft, score, onStartGame, onStartNewGame, gameStatus }) => {
   const isWaiting = gameStatus === GAME_STATUS.PAUSE || gameStatus === GAME_STATUS.PENDING;
-  ;
-
-  const formattedTimer = getFormattedTimerValue(timeLeft)
+  const formattedTimer = getFormattedTimerValue(timeLeft);
 
   return (
     <StatusBarWrapper>

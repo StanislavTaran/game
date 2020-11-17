@@ -1,7 +1,6 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { SQUARES_QTY } from '../../constants/gameParams';
-
 
 const StyledSquareItem = styled.li`
   width: 68px;

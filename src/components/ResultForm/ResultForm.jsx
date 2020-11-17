@@ -39,9 +39,9 @@ const ResultForm = ({ onSubmitForm, score }) => {
       <StyledParagraph>{`Score: ${score}`}</StyledParagraph>
       <StyledForm onSubmit={onSubmitForm}>
         <label>Name </label>
-        <MyInput name="name" placeholder="Enter your name" maxLength='10'/>
+        <MyInput name="name" placeholder="Enter your name" maxLength="10" />
 
-        <MyButton text="SAVE" type='submit' />
+        <MyButton text="SAVE" type="submit" />
       </StyledForm>
     </StyledFormContainer>
   );

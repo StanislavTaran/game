@@ -17,9 +17,11 @@ const StyledTitleLogo = styled.h1`
 `;
 
 const Header = () => {
-  return <StyledHeader>
+  return (
+    <StyledHeader>
       <StyledTitleLogo>Catch the Square</StyledTitleLogo>
-  </StyledHeader>;
+    </StyledHeader>
+  );
 };
 
 export default Header;

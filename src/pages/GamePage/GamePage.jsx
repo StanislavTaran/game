@@ -77,11 +77,11 @@ const GamePage = () => {
       setScoreValue(scoreValue => scoreValue + 1);
       const newRandomNumbers = getUniqNumbersList(squaresIdList);
 
-      e.target.classList.add('hinge')
-      setTimeout(()=>{
+      e.target.classList.add('hinge');
+      setTimeout(() => {
         resetActiveClassForElem(e.target);
-        e.target.classList.remove('hinge')
-      },1000)
+        e.target.classList.remove('hinge');
+      }, 1000);
 
       setSquaresIdList(state => [...state.filter(item => item !== Number(elemId))]);
       if (newRandomNumbers.length) {

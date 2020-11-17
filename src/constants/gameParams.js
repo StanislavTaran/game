@@ -6,7 +6,7 @@ export const GAME_STATUS = {
   PENDING: 'pending',
   GAME_OVER: 'over',
   GAME_ON: 'on',
-  PAUSE: 'pause'
+  PAUSE: 'pause',
 };
 
 export const defaultScoreList = [
@@ -15,9 +15,8 @@ export const defaultScoreList = [
   { name: 'Black_Fox', score: 111 },
 ];
 
-
 export const activeClasses = {
   BLUE: 'square-blue',
   GREEN: 'square-green',
-  RED: 'square-red'
-}
+  RED: 'square-red',
+};
