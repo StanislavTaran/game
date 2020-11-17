@@ -6,7 +6,6 @@ const StyledList = styled.ul`
   font-size: 14px;
   list-style: decimal;
   margin: 0 10px;
-  padding: 0;
 `;
 
 const StyledItem = styled.li`

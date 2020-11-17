@@ -1,5 +1,5 @@
 export const SQUARES_QTY = 63;
-export const INITIAL_TIMER_VALUE = 15;
+export const INITIAL_TIMER_VALUE = 60;
 export const SQUARES_QTY_ON_FIELD = 5;
 
 export const GAME_STATUS = {

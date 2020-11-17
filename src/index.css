@@ -28,3 +28,42 @@ code {
   transform: scale(0.95);
   transition: all 0.3s ease-in-out;
 }
+
+.hinge {
+  animation-name: addict;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes addict {
+
+  0% {
+    -webkit-transform: rotate(0);
+    transform: scale(.7);
+  }
+  10% {
+    -webkit-transform: rotate(90deg);
+    transform: scale(.9);
+  }
+  20% {
+    -webkit-transform: rotate(-90deg);
+    transform: scale(.5);
+
+  }
+  30% {
+    -webkit-transform: rotate(0);
+    transform: scale(.7);
+  }
+  50% {
+    -webkit-transform: rotate(95deg);
+    transform: scale(.3);
+  }
+  70% {
+    -webkit-transform: rotate(-95deg);
+    transform: scale(.5);
+  }
+  100% {
+    transform: scale(.1);
+    -webkit-transform: rotate(0);
+  }
+}

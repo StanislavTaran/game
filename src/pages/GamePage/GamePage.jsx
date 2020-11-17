@@ -76,7 +76,13 @@ const GamePage = () => {
     if (gameStatus === GAME_STATUS.GAME_ON && isSquareActive) {
       setScoreValue(scoreValue => scoreValue + 1);
       const newRandomNumbers = getUniqNumbersList(squaresIdList);
-      resetActiveClassForElem(e.target);
+
+      e.target.classList.add('hinge')
+      setTimeout(()=>{
+        resetActiveClassForElem(e.target);
+        e.target.classList.remove('hinge')
+      },1000)
+
       setSquaresIdList(state => [...state.filter(item => item !== Number(elemId))]);
       if (newRandomNumbers.length) {
         setSquaresIdList(state => [...state, ...newRandomNumbers]);
