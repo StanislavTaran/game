@@ -119,8 +119,8 @@ const GamePage = () => {
   useEffect(() => {
     if (squaresIdList.length < 1) {
       const uniqNumbers = getUniqNumbersList(squaresIdList, true);
-      setSquaresIdList(() => [...uniqNumbers]);
       setActiveClassForElements(uniqNumbers, listSquaresRef);
+      setSquaresIdList(() => [...uniqNumbers]);
     }
   }, [squaresIdList]);
 
